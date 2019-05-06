@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7058971050169878365}
   m_Layer: 0
-  m_Name: Bricks
+  m_Name: Level 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,6 +163,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3029996407890960033, guid: c48e7b8ad6fcf3f4fa2e5c14da7f4a15,
+        type: 3}
+      propertyPath: hittobreak
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3029996407890960033, guid: c48e7b8ad6fcf3f4fa2e5c14da7f4a15,
+        type: 3}
+      propertyPath: hitSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bafaea1f0193909459c6ee535c7afaf3,
+        type: 3}
+    - target: {fileID: 5071872051770914641, guid: c48e7b8ad6fcf3f4fa2e5c14da7f4a15,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071872051770914641, guid: c48e7b8ad6fcf3f4fa2e5c14da7f4a15,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071872051770914640, guid: c48e7b8ad6fcf3f4fa2e5c14da7f4a15,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1ca39c13695c6f24cad26300deffff50,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c48e7b8ad6fcf3f4fa2e5c14da7f4a15, type: 3}
 --- !u!4 &7058971050556339924 stripped

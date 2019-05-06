@@ -53,11 +53,19 @@ public class BallScript : MonoBehaviour
     {
         if(other.transform.CompareTag ("brick"))
         {
-            Transform newExplosion = Instantiate(effect1, other.transform.position, other.transform.rotation);
-            Destroy(newExplosion.gameObject, 2.5f);
-            gm.UpdateScore(other.gameObject.GetComponent<BrickScript>().point);
-            gm.UpdateNumberOfBricks();
-            Destroy(other.gameObject);
+            BrickScript brickScript = other.gameObject.GetComponent<BrickScript>();
+            if (brickScript.hittobreak > 1)
+            {
+                brickScript.BreakBrick();
+            }
+            else
+            {
+                Transform newExplosion = Instantiate(effect1, other.transform.position, other.transform.rotation);
+                Destroy(newExplosion.gameObject, 2.5f);
+                gm.UpdateScore(brickScript.point);
+                gm.UpdateNumberOfBricks();
+                Destroy(other.gameObject);
+            }
         }
         audio1.Play();
     }

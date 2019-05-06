@@ -9,12 +9,14 @@ public class BallScript : MonoBehaviour
     public Transform paddle;
     public float speed;
     public Transform effect1;
+    AudioSource audio1;
     public GameManager gm;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        audio1 = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -57,5 +59,6 @@ public class BallScript : MonoBehaviour
             gm.UpdateNumberOfBricks();
             Destroy(other.gameObject);
         }
+        audio1.Play();
     }
 }

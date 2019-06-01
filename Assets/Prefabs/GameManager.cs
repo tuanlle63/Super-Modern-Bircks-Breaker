@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public int score;
     public Text livesText;
     public Text scoreText;
+    public Text highScoreText;
+    public InputField highScoreInput;
     public bool gameOver;
     public GameObject gameOverPanel;
     public GameObject loadLevelPanel;
@@ -82,6 +84,25 @@ public class GameManager : MonoBehaviour
     {
         gameOver = true;
         gameOverPanel.SetActive(true);
+        int highScore = PlayerPrefs.GetInt("HIGHSCORE");
+        if(score > highScore)
+        {
+            PlayerPrefs.SetInt("HIGHSCORE", score);
+            highScoreText.text = "New High Score! " + "\n" + "Enter Your Name Below.";
+            highScoreInput.gameObject.SetActive(true);
+        }
+        else
+        {
+            highScoreText.text = PlayerPrefs.GetString("HIGHSCORENAME") + " High Score was " + highScore + "\n" + "Can you beat it?";
+        }
+    }
+    
+    public void NewHighScore()
+    {
+        string highScoreName = highScoreInput.text;
+        PlayerPrefs.SetString("HIGHSCORENAME", highScoreName);
+        highScoreInput.gameObject.SetActive(false);
+        highScoreText.text = "Congratulation " + highScoreName + "\n" + " Your New High Score is " + score;
     }
 
     public void PlayAgain()
@@ -91,7 +112,7 @@ public class GameManager : MonoBehaviour
 
     public void Quit()
     {
-        Application.Quit();
-        Debug.Log("Game Quit");
+        SceneManager.LoadScene("Start Menu");
+   
     }
 }

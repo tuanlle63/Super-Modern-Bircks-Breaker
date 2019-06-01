@@ -276,6 +276,7 @@ MonoBehaviour:
   paddle: {fileID: 2017652610}
   speed: 400
   effect1: {fileID: 8451098138350620951, guid: 0d26bb62f3537af4d8d08a1a750b9e23, type: 3}
+  powerup: {fileID: 4310650183445426811, guid: d7172068426afce40b565e0b76e2e9b2, type: 3}
   gm: {fileID: 1677321274}
 --- !u!58 &257447672
 CircleCollider2D:
@@ -817,6 +818,7 @@ GameObject:
   - component: {fileID: 583882521}
   - component: {fileID: 583882520}
   - component: {fileID: 583882523}
+  - component: {fileID: 583882524}
   m_Layer: 0
   m_Name: Paddle
   m_TagString: Untagged
@@ -839,6 +841,7 @@ MonoBehaviour:
   speed: 10
   rightScreen: 4.9
   leftScreen: -4.9
+  gm: {fileID: 1677321274}
 --- !u!212 &583882521
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -942,6 +945,27 @@ PolygonCollider2D:
       - {x: 3.421875, y: -0.96875}
       - {x: 3.8125, y: -0.40625}
       - {x: 3.8125, y: 0.25}
+--- !u!50 &583882524
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583882519}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &609219330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1608,7 +1632,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1413064551
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1716,7 +1740,18 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1677321274}
+        m_MethodName: NewHighScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.InputField+SubmitEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_OnValueChanged:
@@ -1827,7 +1862,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1592133714
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2250,7 +2285,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 0
     m_HorizontalOverflow: 1
